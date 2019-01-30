@@ -29,7 +29,7 @@ namespace EquazioniLibrary.Test
         public void TestIsDetermined3()
         {
             double a = 0;
-            bool response_attesa = true;
+            bool response_attesa = false;
             bool response = Equazioni.IsDetermined(a);
             Assert.AreEqual(response_attesa, response);
         }

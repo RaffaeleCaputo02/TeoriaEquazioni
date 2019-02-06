@@ -18,6 +18,27 @@ namespace EquazioniLibrary
             return response;
         }
 
+        public static bool IsNotDetermined(double a, double b)
+        {
+            bool response = false;
+            if(a==0 && b!=0)
+            {
+                response = true;
+            }
+            return response;
+        }
+
+        public static bool IsImpossible(double a, double b)
+        {
+            bool response = false;
+
+            if(a==0 && b==0)
+            {
+                response = true;
+            }
+            return response;
+        }
+
         
     }
 }

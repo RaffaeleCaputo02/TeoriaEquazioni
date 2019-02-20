@@ -147,7 +147,7 @@ namespace EquazioniLibrary.Test
             double a = 3;
             double b = 4;
             double c = 1;
-            double aspettato = 0;
+            double aspettato = 4;
             double response = Equazioni.Delta(a,b,c);
             Assert.AreEqual(aspettato, response);
         }
@@ -158,7 +158,7 @@ namespace EquazioniLibrary.Test
             double a = 0;
             double b = 4;
             double c = 1;
-            double aspettato = 0;
+            double aspettato = 16;
             double response = Equazioni.Delta(a, b, c);
             Assert.AreEqual(aspettato, response);
         }
@@ -169,7 +169,7 @@ namespace EquazioniLibrary.Test
             double a = 1;
             double b = 4;
             double c = 4;
-            double aspettato = 10;
+            double aspettato = 0;
             double response = Equazioni.Delta(a, b, c);
             Assert.AreEqual(aspettato, response);
         }

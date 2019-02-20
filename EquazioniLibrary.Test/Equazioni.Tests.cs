@@ -140,5 +140,39 @@ namespace EquazioniLibrary.Test
             bool response = Equazioni.IsDegree2(a);
             Assert.AreEqual(response_attesa, response);
         }
+
+        [TestMethod]
+        public void TestDelta1()
+        {
+            double a = 3;
+            double b = 4;
+            double c = 1;
+            double aspettato = 0;
+            double response = Equazioni.Delta(a,b,c);
+            Assert.AreEqual(aspettato, response);
+        }
+
+        [TestMethod]
+        public void TestDelta2()
+        {
+            double a = 0;
+            double b = 4;
+            double c = 1;
+            double aspettato = 0;
+            double response = Equazioni.Delta(a, b, c);
+            Assert.AreEqual(aspettato, response);
+        }
+
+        [TestMethod]
+        public void TestDelta3()
+        {
+            double a = 1;
+            double b = 4;
+            double c = 4;
+            double aspettato = 10;
+            double response = Equazioni.Delta(a, b, c);
+            Assert.AreEqual(aspettato, response);
+        }
+
     }
 }

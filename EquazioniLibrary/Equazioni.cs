@@ -49,5 +49,12 @@ namespace EquazioniLibrary
             }
             return response;
         }
+
+        public static double Delta(double a, double b, double c)
+        {
+            return (b * b) - 4 * a * c;
+        }
+
+
     }
 }

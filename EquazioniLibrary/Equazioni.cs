@@ -55,6 +55,29 @@ namespace EquazioniLibrary
             return (b * b) - 4 * a * c;
         }
 
+        public static string EquationDegree1(double a, double b)
+        {
+            string response = "";
+            if (a == 0 && b==0)
+            {
+                response = "Indeterminato";
+            }
+            else if(a!=0 && b==0)
+            {
+                response = "Impossibile";
+            }
+            else
+            {
+                response = Convert.ToString(b / a);
+            }
+            return response;
+
+            
+               
+            
+
+        }
+
 
     }
 }

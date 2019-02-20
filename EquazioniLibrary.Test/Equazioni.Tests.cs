@@ -174,5 +174,45 @@ namespace EquazioniLibrary.Test
             Assert.AreEqual(aspettato, response);
         }
 
+        [TestMethod]
+        public void TestEquationDegree1_1()
+        {
+            double a = 0;
+            double b = 0;
+            string aspettato = "Impossibile";
+            string response = Equazioni.EquationDegree1(a, b);
+            Assert.AreEqual(aspettato, response);
+        }
+
+        [TestMethod]
+        public void TestEquationDegree1_2()
+        {
+            double a = 0;
+            double b = 5;
+            string aspettato = "Inderminato";
+            string response = Equazioni.EquationDegree1(a, b);
+            Assert.AreEqual(aspettato, response);
+        }
+
+        [TestMethod]
+        public void TestEquationDegree1_3()
+        {
+            double a = 5;
+            double b = 0;
+            string aspettato = "Indeterminato";
+            string response = Equazioni.EquationDegree1(a, b);
+            Assert.AreEqual(aspettato, response);
+        }
+
+        [TestMethod]
+        public void TestEquationDegree1_4()
+        {
+            double a = -5;
+            double b = -10;
+            string aspettato = "Impossibile";
+            string response = Equazioni.EquationDegree1(a, b);
+            Assert.AreEqual(aspettato, response);
+        }
+
     }
 }

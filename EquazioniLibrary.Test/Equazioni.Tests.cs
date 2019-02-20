@@ -118,7 +118,7 @@ namespace EquazioniLibrary.Test
         public void TestIsDegree2_1()
         {
             double a = 6;
-            bool response_attesa = true;
+            bool response_attesa = false;
             bool response = Equazioni.IsDegree2(a);
             Assert.AreEqual(response_attesa, response);
         }
@@ -127,7 +127,7 @@ namespace EquazioniLibrary.Test
         public void TestIsDegree2_2()
         {
             double a = 0;
-            bool response_attesa = false;
+            bool response_attesa = true;
             bool response = Equazioni.IsDegree2(a);
             Assert.AreEqual(response_attesa, response);
         }
@@ -136,7 +136,7 @@ namespace EquazioniLibrary.Test
         public void TestIsDegree2_3()
         {
             double a = -5;
-            bool response_attesa = true;
+            bool response_attesa = false;
             bool response = Equazioni.IsDegree2(a);
             Assert.AreEqual(response_attesa, response);
         }

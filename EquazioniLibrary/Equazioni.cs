@@ -28,7 +28,7 @@ namespace EquazioniLibrary
             return response;
         }
 
-        public static bool IsImpossible(double a, double b)
+        public static bool IsInconsisted(double a, double b)
         {
             bool response = false;
 
@@ -39,6 +39,15 @@ namespace EquazioniLibrary
             return response;
         }
 
-        
+        public static bool IsDegree2(double a)
+        {
+            bool response = false;
+
+            if (a == 0)
+            {
+                response = true;
+            }
+            return response;
+        }
     }
 }

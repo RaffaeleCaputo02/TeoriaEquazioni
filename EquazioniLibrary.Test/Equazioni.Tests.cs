@@ -75,42 +75,69 @@ namespace EquazioniLibrary.Test
         }
 
         [TestMethod]
-        public void TestIsImpossible1()
+        public void TestIsInconsisted1()
         {
             double a = 0;
             double b = 0;
             bool response_attesa = true;
-            bool response = Equazioni.IsImpossible(a, b);
+            bool response = Equazioni.IsInconsisted(a, b);
             Assert.AreEqual(response_attesa, response);
         }
 
         [TestMethod]
-        public void TestIsImpossible2()
+        public void TestIsInconsisted2()
         {
             double a = 6;
             double b = 6;
             bool response_attesa = false;
-            bool response = Equazioni.IsImpossible(a, b);
+            bool response = Equazioni.IsInconsisted(a, b);
             Assert.AreEqual(response_attesa, response);
         }
 
         [TestMethod]
-        public void TestIsImpossible3()
+        public void TestIsInconsisted3()
         {
             double a = 0;
             double b = 6;
             bool response_attesa = false;
-            bool response = Equazioni.IsImpossible(a, b);
+            bool response = Equazioni.IsInconsisted(a, b);
             Assert.AreEqual(response_attesa, response);
         }
 
         [TestMethod]
-        public void TestIsImpossible4()
+        public void TestIsInconsisted4()
         {
             double a = 6;
             double b = 0;
             bool response_attesa = false;
-            bool response = Equazioni.IsImpossible(a, b);
+            bool response = Equazioni.IsInconsisted(a, b);
+            Assert.AreEqual(response_attesa, response);
+        }
+
+        [TestMethod]
+        public void TestIsDegree2_1()
+        {
+            double a = 6;
+            bool response_attesa = true;
+            bool response = Equazioni.IsDegree2(a);
+            Assert.AreEqual(response_attesa, response);
+        }
+
+        [TestMethod]
+        public void TestIsDegree2_2()
+        {
+            double a = 0;
+            bool response_attesa = false;
+            bool response = Equazioni.IsDegree2(a);
+            Assert.AreEqual(response_attesa, response);
+        }
+
+        [TestMethod]
+        public void TestIsDegree2_3()
+        {
+            double a = -5;
+            bool response_attesa = true;
+            bool response = Equazioni.IsDegree2(a);
             Assert.AreEqual(response_attesa, response);
         }
     }

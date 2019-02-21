@@ -179,7 +179,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 0;
             double b = 0;
-            string aspettato = "Impossibile";
+            string aspettato = "Indeterminato";
             string response = Equazioni.EquationDegree1(a, b);
             Assert.AreEqual(aspettato, response);
         }
@@ -189,7 +189,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 0;
             double b = 5;
-            string aspettato = "";
+            string aspettato = "Impossibile";
             string response = Equazioni.EquationDegree1(a, b);
             Assert.AreEqual(aspettato, response);
         }
@@ -199,7 +199,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 5;
             double b = 0;
-            string aspettato = "Impossibile";
+            string aspettato = "0";
             string response = Equazioni.EquationDegree1(a, b);
             Assert.AreEqual(aspettato, response);
         }
@@ -209,7 +209,7 @@ namespace EquazioniLibrary.Test
         {
             double a = -5;
             double b = -10;
-            string aspettato = "Impossibile";
+            string aspettato = "2";
             string response = Equazioni.EquationDegree1(a, b);
             Assert.AreEqual(aspettato, response);
         }

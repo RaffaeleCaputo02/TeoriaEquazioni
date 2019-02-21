@@ -189,7 +189,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 0;
             double b = 5;
-            string aspettato = "Inderminato";
+            string aspettato = "";
             string response = Equazioni.EquationDegree1(a, b);
             Assert.AreEqual(aspettato, response);
         }
@@ -199,7 +199,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 5;
             double b = 0;
-            string aspettato = "Indeterminato";
+            string aspettato = "Impossibile";
             string response = Equazioni.EquationDegree1(a, b);
             Assert.AreEqual(aspettato, response);
         }

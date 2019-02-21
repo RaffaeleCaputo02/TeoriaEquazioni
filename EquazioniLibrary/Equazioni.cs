@@ -62,7 +62,7 @@ namespace EquazioniLibrary
             {
                 response = "Indeterminato";
             }
-            else if(a!=0 && b==0)
+            else if(a==0 && b!=0)
             {
                 response = "Impossibile";
             }

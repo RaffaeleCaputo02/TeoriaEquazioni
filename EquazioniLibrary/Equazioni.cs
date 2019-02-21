@@ -18,7 +18,7 @@ namespace EquazioniLibrary
             return response;
         }
 
-        public static bool IsNotDetermined(double a, double b)
+        public static bool IsInconsisted(double a, double b)
         {
             bool response = false;
             if(a==0 && b!=0)
@@ -28,7 +28,7 @@ namespace EquazioniLibrary
             return response;
         }
 
-        public static bool IsInconsisted(double a, double b)
+        public static bool IsNotDetermined(double a, double b)
         {
             bool response = false;
 
@@ -58,11 +58,11 @@ namespace EquazioniLibrary
         public static string EquationDegree1(double a, double b)
         {
             string response = "";
-            if (a == 0 && b==0)
+            if (IsNotDetermined(a,b))
             {
                 response = "Indeterminato";
             }
-            else if(a==0 && b!=0)
+            else if(IsInconsisted(a,b))
             {
                 response = "Impossibile";
             }
@@ -71,11 +71,27 @@ namespace EquazioniLibrary
                 response = Convert.ToString(b / a);
             }
             return response;
+        }
 
-            
-               
-            
+        public static string EquationDegree2(double a, double b, double c)
+        {
+            string response = "";
+            if (IsNotDetermined(a, b))
+            {
+                response = "Indeterminato";
+            }
+            else if (Delta(a,b,c)<0)
+            {
+                response = "Impossibile";
+            }
+            else
+            {
+                double x = (-b + Math.Sqrt((b * b) - 4 * a * c)) / 2 * a;
+                double y = (-b - Math.Sqrt((b * b) - 4 * a * c)) / 2 * a;
+                response = ($"{x} e {y}"); 
 
+            }
+            return response;
         }
 
 

@@ -49,7 +49,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 0;
             double b = 6;
-            bool response_attesa = true;
+            bool response_attesa = false;
             bool response = Equazioni.IsNotDetermined(a, b);
             Assert.AreEqual(response_attesa, response);
         }
@@ -69,7 +69,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 0;
             double b = 0;
-            bool response_attesa = false;
+            bool response_attesa = true;
             bool response = Equazioni.IsNotDetermined(a, b);
             Assert.AreEqual(response_attesa, response);
         }
@@ -79,7 +79,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 0;
             double b = 0;
-            bool response_attesa = true;
+            bool response_attesa = false;
             bool response = Equazioni.IsInconsisted(a, b);
             Assert.AreEqual(response_attesa, response);
         }
@@ -99,7 +99,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 0;
             double b = 6;
-            bool response_attesa = false;
+            bool response_attesa = true;
             bool response = Equazioni.IsInconsisted(a, b);
             Assert.AreEqual(response_attesa, response);
         }
@@ -211,6 +211,37 @@ namespace EquazioniLibrary.Test
             double b = -10;
             string aspettato = "2";
             string response = Equazioni.EquationDegree1(a, b);
+            Assert.AreEqual(aspettato, response);
+        }
+
+        [TestMethod]
+        public void TestEquationDegree2_1()
+        {
+            double a = 0;
+            double b = 0;
+            double c = 8;
+            string aspettato = "Indeterminato";
+            string response = Equazioni.EquationDegree2(a, b, c);
+            Assert.AreEqual(aspettato, response);
+        }
+        [TestMethod]
+        public void TestEquationDegree2_2()
+        {
+            double a = 1;
+            double b = 5;
+            double c = -14;
+            string aspettato = "2 e -7";
+            string response = Equazioni.EquationDegree2(a, b, c);
+            Assert.AreEqual(aspettato, response);
+        }
+        [TestMethod]
+        public void TestEquationDegree2_3()
+        {
+            double a = 12;
+            double b = 1;
+            double c = 5;
+            string aspettato = "Impossibile";
+            string response = Equazioni.EquationDegree2(a, b, c);
             Assert.AreEqual(aspettato, response);
         }
 

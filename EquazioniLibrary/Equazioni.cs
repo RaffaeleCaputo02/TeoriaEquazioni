@@ -41,11 +41,11 @@ namespace EquazioniLibrary
 
         public static bool IsDegree2(double a)
         {
-            bool response = false;
+            bool response = true;
 
             if (a == 0)
             {
-                response = true;
+                response = false;
             }
             return response;
         }
@@ -76,19 +76,28 @@ namespace EquazioniLibrary
         public static string EquationDegree2(double a, double b, double c)
         {
             string response = "";
-            if (IsNotDetermined(a, b))
+            if (a == 0 && b == 0 && c == 0)
             {
                 response = "Indeterminato";
             }
-            else if (Delta(a,b,c)<0)
+            else if (!IsDegree2(a))
+            {
+                response = EquationDegree1(b, c);
+            }
+            else if (Delta(a, b, c) < 0)
             {
                 response = "Impossibile";
+            }
+            else if (Delta(a, b, c) == 0)
+            {
+                response = Convert.ToString((-b + Math.Sqrt((b * b) - 4 * a * c)) / 2 * a);
+                
             }
             else
             {
                 double x = (-b + Math.Sqrt((b * b) - 4 * a * c)) / 2 * a;
                 double y = (-b - Math.Sqrt((b * b) - 4 * a * c)) / 2 * a;
-                response = ($"{x} e {y}"); 
+                response = ($"{x} e {y}");
 
             }
             return response;

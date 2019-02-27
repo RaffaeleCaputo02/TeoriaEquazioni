@@ -118,7 +118,7 @@ namespace EquazioniLibrary.Test
         public void TestIsDegree2_1()
         {
             double a = 6;
-            bool response_attesa = false;
+            bool response_attesa = true;
             bool response = Equazioni.IsDegree2(a);
             Assert.AreEqual(response_attesa, response);
         }
@@ -127,7 +127,7 @@ namespace EquazioniLibrary.Test
         public void TestIsDegree2_2()
         {
             double a = 0;
-            bool response_attesa = true;
+            bool response_attesa = false;
             bool response = Equazioni.IsDegree2(a);
             Assert.AreEqual(response_attesa, response);
         }
@@ -136,7 +136,7 @@ namespace EquazioniLibrary.Test
         public void TestIsDegree2_3()
         {
             double a = -5;
-            bool response_attesa = false;
+            bool response_attesa = true;
             bool response = Equazioni.IsDegree2(a);
             Assert.AreEqual(response_attesa, response);
         }
@@ -219,7 +219,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 0;
             double b = 0;
-            double c = 8;
+            double c = 0;
             string aspettato = "Indeterminato";
             string response = Equazioni.EquationDegree2(a, b, c);
             Assert.AreEqual(aspettato, response);
@@ -244,6 +244,25 @@ namespace EquazioniLibrary.Test
             string response = Equazioni.EquationDegree2(a, b, c);
             Assert.AreEqual(aspettato, response);
         }
-
+        [TestMethod]
+        public void TestEquationDegree2_4()
+        {
+            double a = 1;
+            double b = -4;
+            double c = 4;
+            string aspettato = "-4";
+            string response = Equazioni.EquationDegree2(a, b, c);
+            Assert.AreEqual(aspettato, response);
+        }
+        [TestMethod]
+        public void TestEquationDegree2_5()
+        {
+            double a = 0;
+            double b = -4;
+            double c = 4;
+            string aspettato = "-1";
+            string response = Equazioni.EquationDegree2(a, b, c);
+            Assert.AreEqual(aspettato, response);
+        }
     }
 }
